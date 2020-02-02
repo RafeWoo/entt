@@ -1589,9 +1589,7 @@ it cannot be caught by a non-const reference. Capture it by copy or by const
 reference instead.
 
 More in general, none of the features offered by the library is affected, but
-for the ones that require to return actual instances.<br/>
-This optimization can be disabled by defining the `ENTT_DISABLE_ETO` macro. In
-this case, the empty types will be treated like all other types, no matter what.
+for the ones that require to return actual instances.
 
 # Multithreading
 

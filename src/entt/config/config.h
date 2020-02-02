@@ -42,15 +42,6 @@
 #endif
 
 
-#ifndef ENTT_DISABLE_ETO
-#   include <type_traits>
-#   define ENTT_ENABLE_ETO(Type) std::is_empty_v<Type>
-#else
-#   // sfinae-friendly definition
-#   define ENTT_ENABLE_ETO(Type) (false && std::is_empty_v<Type>)
-#endif
-
-
 #ifndef ENTT_STANDARD_CPP
 #   if defined _MSC_VER
 #      define ENTT_PRETTY_FUNCTION __FUNCSIG__

@@ -211,7 +211,7 @@ class basic_registry {
 
                 if constexpr(std::is_copy_constructible_v<std::decay_t<Component>>) {
                     pdata.assure = [](basic_registry &other, const sparse_set<entity_type> &cpool) {
-                        if constexpr(ENTT_ENABLE_ETO(Component)) {
+                        if constexpr(std::is_empty_v<Component>) {
                             other.assure<Component>().assign(other, cpool.begin(), cpool.end());
                         } else {
                             other.assure<Component>().assign(other, cpool.begin(), cpool.end(), [&cpool](auto *instance) {
